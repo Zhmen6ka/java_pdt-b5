@@ -38,11 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sandbox/src/main/java/ru/stqa/pft/tasks/second/Distance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="102">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="7" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -60,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/Sandbox/src/test/java/ru/stqa/pft/sandbox/SquareTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,11 +68,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sandbox/src/test/java/ru/stqa/ptf/tasks/second/DistanceTests.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Sandbox/src/test/java/ru/stqa/ptf/tasks/second/PointTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="239">
+              <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -147,6 +150,7 @@
         <option value="$PROJECT_DIR$/Sandbox/src/main/java/ru/stqa/pft/tasks/second/DistanceTests.java" />
         <option value="$PROJECT_DIR$/Sandbox/src/test/java/DistanceTests.java" />
         <option value="$PROJECT_DIR$/Sandbox/src/test/java/ru/stqa/ptf/tasks/second/DistanceTests.java" />
+        <option value="$PROJECT_DIR$/Sandbox/src/test/java/ru/stqa/ptf/tasks/second/PointTests.java" />
       </list>
     </option>
   </component>
@@ -245,7 +249,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558548005580" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558549451993" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Sandbox/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -271,7 +275,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.SquareTests">
+  <component name="RunManager" selected="TestNG.PointTests">
     <configuration name="Distance" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.tasks.second.Distance" />
       <module name="Sandbox.main" />
@@ -285,40 +289,69 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyFirstProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.sandbox.MyFirstProgram" />
-      <module name="Sandbox.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SquareTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="PointTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sandbox.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.stqa.pft.sandbox.*" />
+          <option name="PATTERN" value="ru.stqa.ptf.tasks.second.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.pft.sandbox" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.sandbox.SquareTests" />
+      <option name="PACKAGE_NAME" value="ru.stqa.ptf.tasks.second" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.ptf.tasks.second.PointTests" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SquareTests.testArea" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="PointTests.DistanceTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Sandbox.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.stqa.pft.sandbox.*" />
+          <option name="PATTERN" value="ru.stqa.ptf.tasks.second.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.pft.sandbox" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.sandbox.SquareTests" />
-      <option name="METHOD_NAME" value="testArea" />
+      <option name="PACKAGE_NAME" value="ru.stqa.ptf.tasks.second" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.ptf.tasks.second.PointTests" />
+      <option name="METHOD_NAME" value="DistanceTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PointTests.DistanceTest2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sandbox.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.ptf.tasks.second.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.stqa.ptf.tasks.second" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.ptf.tasks.second.PointTests" />
+      <option name="METHOD_NAME" value="DistanceTest2" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PointTests.DistanceTest3" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Sandbox.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.ptf.tasks.second.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.stqa.ptf.tasks.second" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.ptf.tasks.second.PointTests" />
+      <option name="METHOD_NAME" value="DistanceTest3" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -328,10 +361,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.SquareTests" />
-        <item itemvalue="TestNG.SquareTests.testArea" />
+        <item itemvalue="TestNG.PointTests" />
+        <item itemvalue="TestNG.PointTests.DistanceTest2" />
+        <item itemvalue="TestNG.PointTests.DistanceTest3" />
+        <item itemvalue="TestNG.PointTests.DistanceTest" />
         <item itemvalue="Application.Distance" />
-        <item itemvalue="Application.MyFirstProgram" />
       </list>
     </recent_temporary>
   </component>
@@ -349,15 +383,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SquareTests_testArea - 2019.05.22 at 20h 39m 52s.xml">
-      <configuration name="SquareTests.testArea" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SquareTests_testArea - 2019.05.22 at 20h 41m 21s.xml">
-      <configuration name="SquareTests.testArea" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SquareTests_testArea - 2019.05.22 at 20h 43m 25s.xml">
-      <configuration name="SquareTests.testArea" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="SquareTests_testArea - 2019.05.22 at 20h 45m 03s.xml">
       <configuration name="SquareTests.testArea" configurationId="TestNG" />
     </history-entry>
@@ -370,12 +395,30 @@
     <history-entry file="SquareTests - 2019.05.22 at 20h 52m 14s.xml">
       <configuration name="SquareTests" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="SquareTests - 2019.05.22 at 21h 09m 58s.xml">
+      <configuration name="SquareTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="PointTests_DistanceTest - 2019.05.22 at 21h 15m 57s.xml">
+      <configuration name="PointTests.DistanceTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="PointTests - 2019.05.22 at 21h 19m 01s.xml">
+      <configuration name="PointTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="PointTests_DistanceTest3 - 2019.05.22 at 21h 19m 58s.xml">
+      <configuration name="PointTests.DistanceTest3" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="PointTests_DistanceTest2 - 2019.05.22 at 21h 20m 50s.xml">
+      <configuration name="PointTests.DistanceTest2" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="PointTests - 2019.05.22 at 21h 22m 34s.xml">
+      <configuration name="PointTests" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27231467" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27231467" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -385,7 +428,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -470,24 +513,27 @@
     <entry file="file://$PROJECT_DIR$/Sandbox/src/test/java/ru/stqa/pft/sandbox/SquareTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sandbox/src/test/java/ru/stqa/ptf/tasks/second/DistanceTests.java">
+    <entry file="file://$PROJECT_DIR$/Sandbox/src/main/java/ru/stqa/pft/tasks/second/Distance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="7" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sandbox/src/main/java/ru/stqa/pft/tasks/second/Distance.java">
+    <entry file="file://$PROJECT_DIR$/Sandbox/src/test/java/ru/stqa/ptf/tasks/second/PointTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="239">
+          <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
