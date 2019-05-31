@@ -15,7 +15,7 @@ public class ContactHelper extends BaseHelper {
   }
 
   public void fillNewContactForm(ContactData contactData) {
-    type(By.name("firstname"), contactData.getFirstName());;
+    type(By.name("firstname"), contactData.getFirstName());
     type(By.name("lastname"), contactData.getLastName());
     type(By.name("address"), contactData.getAddress());
     type(By.name("mobile"), contactData.getMobileNumber());
@@ -24,5 +24,17 @@ public class ContactHelper extends BaseHelper {
 
   public void initCreationNewContact() {
     click(By.linkText("add new"));
+  }
+
+  public void selectContact() {
+    click(By.name("selected[]"));
+  }
+
+  public void deleteSelectedContact() {
+    click(By.xpath("//input[@value='Delete']"));
+  }
+
+  public void closeDialogWindow() {
+    wd.switchTo().alert().accept();
   }
 }
