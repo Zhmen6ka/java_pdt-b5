@@ -8,8 +8,15 @@ public class ContactModificationTests extends TestBase {
 
   public void testContactModification() {
     app.getNavigationHelper().gotoHomePage();
+    if (! app.getContactHelper().isThereAContact()){
+      app.getContactHelper().createContact(new ContactData("Мирон", "Самойленко", "СПб, " +
+              "Кузнечный переулок, д. 6, кв. 155","+79117654575", "Myron.Sam@gmail.com",
+              "test3"));
+    }
     app.getContactHelper().initContactModification();
-    app.getContactHelper().fillNewContactForm(new ContactData("Евгения", "Иванова", "СПб, улица Карбышева, д. 8, кв. 155", "+79129854565", "Zhmenka@gmail.com", null), false);
+    app.getContactHelper().fillNewContactForm(new ContactData("Евгения", "Иванова",
+            "СПб, улица Карбышева, д. 8, кв. 155", "+79129854565",
+            "Zhmenka@gmail.com", null), false);
     app.getContactHelper().submitContactModification();
   }
 }
