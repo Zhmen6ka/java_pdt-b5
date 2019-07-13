@@ -9,7 +9,7 @@ public class ContactCreationTests extends TestBase{
   public void testContactCreation() {
     app.getContactHelper().createContact(new ContactData("Мирон", "Самойленко", "СПб, " +
             "Кузнечный переулок, д. 6, кв. 155","+79117654575", "Myron.Sam@gmail.com",
-            "test3"));
+            "Test1"));
   }
 
 }
