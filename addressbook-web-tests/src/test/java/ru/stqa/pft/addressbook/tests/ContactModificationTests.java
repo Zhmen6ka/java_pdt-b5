@@ -15,7 +15,7 @@ public class ContactModificationTests extends TestBase {
               "test3"));
     }
     int before = app.getGroupHelper().getGroupCount();
-    app.getContactHelper().initContactModification();
+    app.getContactHelper().initContactModification(before -1);
     app.getContactHelper().fillNewContactForm(new ContactData("Евгения", "Иванова",
             "СПб, улица Карбышева, д. 8, кв. 155", "+79129854565",
             "Zhmenka@gmail.com", null), false);

@@ -15,7 +15,7 @@ public class ContactDeletionTests extends TestBase {
               "test3"));
     }
     int before = app.getGroupHelper().getGroupCount();
-    app.getContactHelper().selectContact();
+    app.getContactHelper().selectContact(0);
     app.getContactHelper().deleteSelectedContact();
     app.getContactHelper().closeDialogWindow();
     int after = app.getGroupHelper().getGroupCount();
