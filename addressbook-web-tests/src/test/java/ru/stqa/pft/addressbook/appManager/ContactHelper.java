@@ -55,9 +55,16 @@ public class ContactHelper extends BaseHelper {
   }
 
   public void createContact(ContactData contactData) {
+    int before = getContactCount();
     initCreationNewContact();
     fillNewContactForm(contactData, true);
     submitContactCreation();
+    int after = getContactCount();
+    Assert.assertEquals(after, before + 1);
+  }
+
+  private int getContactCount() {
+    return wd.findElements(By.name("selected[]")).size();
   }
 
   public boolean isThereAContact() {

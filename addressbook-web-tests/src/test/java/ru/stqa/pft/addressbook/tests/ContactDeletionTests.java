@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 
@@ -13,8 +14,11 @@ public class ContactDeletionTests extends TestBase {
               "Кузнечный переулок, д. 6, кв. 155","+79117654575", "Myron.Sam@gmail.com",
               "test3"));
     }
+    int before = app.getGroupHelper().getGroupCount();
     app.getContactHelper().selectContact();
     app.getContactHelper().deleteSelectedContact();
     app.getContactHelper().closeDialogWindow();
+    int after = app.getGroupHelper().getGroupCount();
+    Assert.assertEquals(after, before - 1);
   }
 }
