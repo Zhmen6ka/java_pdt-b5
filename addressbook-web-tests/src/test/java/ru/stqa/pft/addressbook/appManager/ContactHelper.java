@@ -10,7 +10,6 @@ import ru.stqa.pft.addressbook.model.ContactData;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 public class ContactHelper extends BaseHelper {
@@ -69,13 +68,11 @@ public class ContactHelper extends BaseHelper {
     List<ContactData> after = getContactList();
     Assert.assertEquals(after.size(), before.size() + 1);
 
-    contactData.setId(after.stream().max(Comparator.comparingInt(ContactData::getId)).get().getId());
     before.add(contactData);
-    Assert.assertEquals(new HashSet<Object>(before), new HashSet<Object>(after));
-  }
-
-  private int getContactCount() {
-    return wd.findElements(By.name("selected[]")).size();
+    Comparator<? super ContactData> byId = Comparator.comparingInt(ContactData::getId);
+    before.sort(byId);
+    after.sort(byId);
+    Assert.assertEquals(before, after);
   }
 
   public boolean isThereAContact() {
