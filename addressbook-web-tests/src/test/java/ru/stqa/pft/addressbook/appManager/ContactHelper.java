@@ -6,9 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 
 public class ContactHelper extends BaseHelper {
@@ -66,6 +69,10 @@ public class ContactHelper extends BaseHelper {
     submitContactCreation();
     List<ContactData> after = getContactList();
     Assert.assertEquals(after.size(), before.size() + 1);
+
+    contactData.setIdEdit(after.stream().max(Comparator.comparingInt(ContactData::getIdEdit)).get().getIdEdit());
+    before.add(contactData);
+    Assert.assertEquals(new HashSet<Object>(before), new HashSet<Object>(after));
   }
 
   private int getContactCount() {
@@ -82,7 +89,7 @@ public class ContactHelper extends BaseHelper {
     for (WebElement element : elements) {
       String firstname = element.findElement(By.xpath(".//td[3]")).getText();
       String lastname = element.findElement(By.xpath(".//td[2]")).getText();
-      String idEdit = element.findElement(By.xpath(".//td[8]/a")).getAttribute("href");
+      int idEdit = Integer.parseInt(element.findElement(By.xpath(".//td[8]/a")).getAttribute("href"));
       ContactData contact = new ContactData(idEdit, firstname, lastname, null, null, null,
               null);
       contacts.add(contact);

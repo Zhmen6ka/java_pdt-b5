@@ -3,7 +3,8 @@ package ru.stqa.pft.addressbook.model;
 import java.util.Objects;
 
 public class ContactData {
-  private final String idEdit;
+
+  private int idEdit;
   private final String firstname;
   private final String lastname;
   private final String address;
@@ -13,7 +14,7 @@ public class ContactData {
 
   public ContactData(String firstname, String lastname, String address, String mobileNumber,
                      String email, String group) {
-    this.idEdit = null;
+    this.idEdit = 0;
     this.firstname = firstname;
     this.lastname = lastname;
     this.address = address;
@@ -22,7 +23,7 @@ public class ContactData {
     this.group = group;
   }
 
-  public ContactData(String idEdit, String firstname, String lastname, String address, String mobileNumber,
+  public ContactData(int idEdit, String firstname, String lastname, String address, String mobileNumber,
                      String email, String group) {
     this.idEdit = idEdit;
     this.firstname = firstname;
@@ -33,8 +34,12 @@ public class ContactData {
     this.group = group;
   }
 
-  public String getIdEdit() {
+  public int getIdEdit() {
     return idEdit;
+  }
+
+  public void setIdEdit(int idEdit) {
+    this.idEdit = idEdit;
   }
 
   public String getFirstname() {
@@ -75,7 +80,7 @@ public class ContactData {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     ContactData that = (ContactData) o;
-    return Objects.equals(idEdit, that.idEdit) &&
+    return idEdit == that.idEdit &&
             Objects.equals(firstname, that.firstname) &&
             Objects.equals(lastname, that.lastname);
   }
@@ -84,4 +89,5 @@ public class ContactData {
   public int hashCode() {
     return Objects.hash(idEdit, firstname, lastname);
   }
+
 }
