@@ -60,12 +60,12 @@ public class ContactHelper extends BaseHelper {
     click(By.xpath("(//input[@name='update'])[2]"));
   }
 
-  public void createContact(ContactData contactData) {
-    List<ContactData> before = getContactList();
+  public void create(ContactData contactData) {
+    List<ContactData> before = list();
     initCreationNewContact();
     fillNewContactForm(contactData, true);
     submitContactCreation();
-    List<ContactData> after = getContactList();
+    List<ContactData> after = list();
     Assert.assertEquals(after.size(), before.size() + 1);
 
     before.add(contactData);
@@ -75,11 +75,23 @@ public class ContactHelper extends BaseHelper {
     Assert.assertEquals(before, after);
   }
 
+  public void modify(int index, ContactData contact) {
+    initContactModification(index);
+    fillNewContactForm(contact, false);
+    submitContactModification();
+  }
+
+  public void delete(int index) {
+    selectContact(index);
+    deleteSelectedContact();
+    closeDialogWindow();
+  }
+
   public boolean isThereAContact() {
     return isElementPresent(By.name("selected[]"));
   }
 
-  public List<ContactData> getContactList() {
+  public List<ContactData> list() {
     List<ContactData> contacts = new ArrayList<>();
     List<WebElement> elements = wd.findElements(By.xpath("//tr[@name='entry']"));
     for (WebElement element : elements) {
