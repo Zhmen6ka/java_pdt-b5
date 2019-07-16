@@ -14,9 +14,9 @@ public class ContactDeletionTests extends TestBase {
   public void insurePredictions() {
     app.goTo().homePage();
     if (! app.contact().isThereAContact()){
-      app.contact().create(new ContactData("Мирон", "Самойленко", "СПб, " +
-              "Кузнечный переулок, д. 6, кв. 155","+79117654575", "Myron.Sam@gmail.com",
-              "test3"));
+      app.contact().create(new ContactData().withFirstname("Мирон").withLastname("Самойленко").
+              withAddress("СПб, " + "Кузнечный переулок, д. 6, кв. 155").withMobileNumber("+79117654575").
+              withEmail("Myron.Sam@gmail.com").withGroup("test1"));
     }
   }
 
