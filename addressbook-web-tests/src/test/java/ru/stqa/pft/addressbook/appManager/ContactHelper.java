@@ -8,9 +8,7 @@ import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class ContactHelper extends BaseHelper {
 
@@ -44,6 +42,10 @@ public class ContactHelper extends BaseHelper {
     wd.findElements(By.name("selected[]")).get(index).click();
   }
 
+  public void selectContactById(int id) {
+    wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
+  }
+
   public void deleteSelectedContact() {
     click(By.xpath("//input[@value='Delete']"));
   }
@@ -52,37 +54,35 @@ public class ContactHelper extends BaseHelper {
     wd.switchTo().alert().accept();
   }
 
-  public void initContactModification(int index) {
-    wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
+  public void initContactModificationById(int id) {
+    wd.findElement(By.cssSelector("a[href='edit.php?id=" + id + "']")).click();
   }
 
   public void submitContactModification() {
     click(By.xpath("(//input[@name='update'])[2]"));
   }
 
-  public void create(ContactData contactData) {
-    List<ContactData> before = list();
+  public void create(ContactData contact) {
+    Set<ContactData> before = all();
     initCreationNewContact();
-    fillNewContactForm(contactData, true);
+    fillNewContactForm(contact, true);
     submitContactCreation();
-    List<ContactData> after = list();
+    Set<ContactData> after = all();
     Assert.assertEquals(after.size(), before.size() + 1);
 
-    before.add(contactData);
-    Comparator<? super ContactData> byId = Comparator.comparingInt(ContactData::getId);
-    before.sort(byId);
-    after.sort(byId);
+    contact.withId(after.stream().mapToInt(c -> c.getId()).max().getAsInt());
+    before.add(contact);
     Assert.assertEquals(before, after);
   }
 
-  public void modify(int index, ContactData contact) {
-    initContactModification(index);
+  public void modify(ContactData contact) {
+    initContactModificationById(contact.getId());
     fillNewContactForm(contact, false);
     submitContactModification();
   }
 
-  public void delete(int index) {
-    selectContact(index);
+  public void delete(ContactData contact) {
+    selectContactById(contact.getId());
     deleteSelectedContact();
     closeDialogWindow();
   }
@@ -91,8 +91,8 @@ public class ContactHelper extends BaseHelper {
     return isElementPresent(By.name("selected[]"));
   }
 
-  public List<ContactData> list() {
-    List<ContactData> contacts = new ArrayList<>();
+  public Set<ContactData> all() {
+    Set<ContactData> contacts = new HashSet<>();
     List<WebElement> elements = wd.findElements(By.xpath("//tr[@name='entry']"));
     for (WebElement element : elements) {
       String firstname = element.findElement(By.xpath(".//td[3]")).getText();
@@ -102,4 +102,5 @@ public class ContactHelper extends BaseHelper {
     }
     return contacts;
   }
+
 }
