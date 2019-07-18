@@ -13,6 +13,7 @@ public class ContactData {
   private String group;
   private String homePhone;
   private String workPhone;
+  private String allPhones;
 
   public ContactData withId(int id) {
     this.id = id;
@@ -58,6 +59,10 @@ public class ContactData {
     this.workPhone = workPhone;
     return this;
   }
+  public ContactData withAllPhones(String allPhones) {
+    this.allPhones = allPhones;
+    return this;
+  }
 
   public int getId() {
     return id;
@@ -95,6 +100,10 @@ public class ContactData {
     return workPhone;
   }
 
+  public String getAllPhones() {
+    return allPhones;
+  }
+
   @Override
   public String toString() {
     return "ContactData{" +
@@ -118,5 +127,6 @@ public class ContactData {
   public int hashCode() {
     return Objects.hash(id, firstname, lastname);
   }
+
 
 }
