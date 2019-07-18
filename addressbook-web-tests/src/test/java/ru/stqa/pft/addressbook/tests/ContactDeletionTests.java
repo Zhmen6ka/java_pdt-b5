@@ -15,7 +15,7 @@ public class ContactDeletionTests extends TestBase {
     app.goTo().homePage();
     if (app.contact().all().size() == 0){
       app.contact().create(new ContactData().withFirstname("Мирон").withLastname("Самойленко").
-              withAddress("СПб, " + "Кузнечный переулок, д. 6, кв. 155").withMobileNumber("+79117654575").
+              withAddress("СПб, " + "Кузнечный переулок, д. 6, кв. 155").withMobilePhone("+79117654575").
               withEmail("Myron.Sam@gmail.com").withGroup("Test3"));
     }
   }
