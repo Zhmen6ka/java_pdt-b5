@@ -16,7 +16,7 @@ public class ContactModificationTests extends TestBase {
     if (app.contact().all().size() == 0){
       app.contact().create(new ContactData().withFirstname("Мирон").
               withLastname("Самойленко").withAddress("СПб, " + "Кузнечный переулок, д. 6, кв. 155").
-              withMobileNumber("+79117654575").withEmail("Myron.Sam@gmail.com").withGroup("test1"));
+              withMobileNumber("+79117654575").withEmail("Myron.Sam@gmail.com").withGroup("Test1"));
     }
   }
 
@@ -28,8 +28,8 @@ public class ContactModificationTests extends TestBase {
             withLastname("Самойленко").withAddress("СПб, " + "Кузнечный переулок, д. 6, кв. 155").
             withMobileNumber("+79117654575").withEmail("Myron.Sam@gmail.com").withGroup(null);
     app.contact().modify(contact);
+    assertThat(app.contact().count(), equalTo(before.size()));
     Contacts after = app.contact().all();
-    assertEquals(after.size(), before.size());
     assertThat(after, equalTo((before).without(modifiedContact).withAdded(contact)));
   }
 }
