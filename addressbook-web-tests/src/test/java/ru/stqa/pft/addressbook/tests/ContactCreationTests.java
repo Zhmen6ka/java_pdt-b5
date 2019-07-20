@@ -66,6 +66,7 @@ public class ContactCreationTests extends TestBase{
             .withAdded(contact.withId(after.stream().mapToInt(c -> c.getId()).max().getAsInt()))));
   }
 
+  /*
   @Test
   public void testBadContactCreation() {
     Contacts before = app.contact().all();
@@ -79,6 +80,7 @@ public class ContactCreationTests extends TestBase{
     Contacts after = app.contact().all();
     assertThat(after, equalTo(before));
   }
+*/
 
   /*
   @Test
