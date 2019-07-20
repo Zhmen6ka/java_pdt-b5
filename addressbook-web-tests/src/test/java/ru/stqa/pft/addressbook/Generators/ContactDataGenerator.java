@@ -6,7 +6,6 @@ import com.beust.jcommander.ParameterException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
-import org.openqa.selenium.json.Json;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 import java.io.File;
@@ -57,9 +56,9 @@ public class ContactDataGenerator {
   private void saveAsJson(List<ContactData> contacts, File file) throws IOException {
     Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
     String json = gson.toJson(contacts);
-    Writer writer = new FileWriter(file);
-    writer.write(json);
-    writer.close();
+    try (Writer writer = new FileWriter(file)) {
+      writer.write(json);
+    }
   }
 
   private void saveAsXml(List<ContactData> contacts, File file) throws IOException {
@@ -67,19 +66,19 @@ public class ContactDataGenerator {
     xstream.processAnnotations(ContactData.class);
     xstream.alias("contact", ContactData.class);
     String xml = xstream.toXML(contacts);
-    Writer writer = new FileWriter(file);
-    writer.write(xml);
-    writer.close();
+    try (Writer writer = new FileWriter(file)){
+      writer.write(xml);
+    }
   }
 
 
   private void saveAsCsv(List<ContactData> contacts, File file) throws IOException {
-    Writer writer = new FileWriter(file);
-    for (ContactData contact : contacts) {
-      writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstname(), contact.getLastname(),
-              contact.getAddress(), contact.getMobilePhone(), contact.getGroup()));
+    try (Writer writer = new FileWriter(file)) {
+      for (ContactData contact : contacts) {
+        writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstname(), contact.getLastname(),
+                contact.getAddress(), contact.getMobilePhone(), contact.getGroup()));
+      }
     }
-    writer.close();
   }
 
   private List<ContactData> generateContacts(int count) {
@@ -89,12 +88,12 @@ public class ContactDataGenerator {
               .withFirstname(String.format("firstname %s", i))
               .withLastname(String.format("lastname %s", i))
               .withAddress(String.format("address %s", i))
-              .withFirstEmail(String.format("First@email %s .ru", i))
-              .withSecondEmail(String.format("Second@email %s .ru", i))
-              .withThirdEmail(String.format("Third@email %s .ru", i))
-              .withMobilePhone(String.format("+7906102636 %s", i))
-              .withHomePhone(String.format("(405)873 %s", i))
-              .withWorkPhone(String.format("(808)72-3 %s", i))
+              .withFirstEmail(String.format("First@email%s.ru", i))
+              .withSecondEmail(String.format("Second@email%s.ru", i))
+              .withThirdEmail(String.format("Third@email%s.ru", i))
+              .withMobilePhone(String.format("+7906102636%s", i))
+              .withHomePhone(String.format("(405)873%s", i))
+              .withWorkPhone(String.format("(808)72-3%s", i))
               .withGroup(String.format("test %s", i)));
     }
     return contacts;

@@ -3,36 +3,36 @@
     "firstname": "firstname 0",
     "lastname": "lastname 0",
     "address": "address 0",
-    "firstEmail": "First@email 0 .ru",
-    "secondEmail": "Second@email 0 .ru",
-    "thirdEmail": "Third@email 0 .ru",
-    "mobilePhone": "+7906102636 0",
+    "firstEmail": "First@email0.ru",
+    "secondEmail": "Second@email0.ru",
+    "thirdEmail": "Third@email0.ru",
+    "mobilePhone": "+79061026360",
     "group": "test 0",
-    "homePhone": "(405)873 0",
-    "workPhone": "(808)72-3 0"
+    "homePhone": "(405)8730",
+    "workPhone": "(808)72-30"
   },
   {
     "firstname": "firstname 1",
     "lastname": "lastname 1",
     "address": "address 1",
-    "firstEmail": "First@email 1 .ru",
-    "secondEmail": "Second@email 1 .ru",
-    "thirdEmail": "Third@email 1 .ru",
-    "mobilePhone": "+7906102636 1",
+    "firstEmail": "First@email1.ru",
+    "secondEmail": "Second@email1.ru",
+    "thirdEmail": "Third@email1.ru",
+    "mobilePhone": "+79061026361",
     "group": "test 1",
-    "homePhone": "(405)873 1",
-    "workPhone": "(808)72-3 1"
+    "homePhone": "(405)8731",
+    "workPhone": "(808)72-31"
   },
   {
     "firstname": "firstname 2",
     "lastname": "lastname 2",
     "address": "address 2",
-    "firstEmail": "First@email 2 .ru",
-    "secondEmail": "Second@email 2 .ru",
-    "thirdEmail": "Third@email 2 .ru",
-    "mobilePhone": "+7906102636 2",
+    "firstEmail": "First@email2.ru",
+    "secondEmail": "Second@email2.ru",
+    "thirdEmail": "Third@email2.ru",
+    "mobilePhone": "+79061026362",
     "group": "test 2",
-    "homePhone": "(405)873 2",
-    "workPhone": "(808)72-3 2"
+    "homePhone": "(405)8732",
+    "workPhone": "(808)72-32"
   }
 ]
