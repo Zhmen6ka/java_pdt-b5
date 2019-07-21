@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.ContactCreationTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-07-20T20:10:49" hostname="DESKTOP-U0KV4H3" time="38.31">
+<testsuite name="ru.stqa.pft.addressbook.tests.ContactCreationTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-07-21T11:10:39" hostname="DESKTOP-U0KV4H3" time="45.679">
   <properties/>
-  <testcase name="testContactCreation[0](ContactData{idEdit='2147483647', firstname='firstname 0', lastname='lastname 0'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="15.446"/>
-  <testcase name="testContactCreation[1](ContactData{idEdit='2147483647', firstname='firstname 1', lastname='lastname 1'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="11.172"/>
-  <testcase name="testContactCreation[2](ContactData{idEdit='2147483647', firstname='firstname 2', lastname='lastname 2'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="11.691"/>
+  <testcase name="testContactCreation[0](ContactData{idEdit='2147483647', firstname='firstname 0', lastname='lastname 0'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="19.434"/>
+  <testcase name="testContactCreation[1](ContactData{idEdit='2147483647', firstname='firstname 1', lastname='lastname 1'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="13.009"/>
+  <testcase name="testContactCreation[2](ContactData{idEdit='2147483647', firstname='firstname 2', lastname='lastname 2'})" classname="ru.stqa.pft.addressbook.tests.ContactCreationTests" time="13.234"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[console.error: BroadcastService: 
-  receivedBroadcastMessage: handler for
-  remote-settings/monitor_changes
-  threw error:
-  Message: Error: Polling for changes failed: http://%(server)s/dummy/blocklist//buckets/monitor/collections/changes/records?_expected=%221563580805691%22 is not a valid URL..
-  Stack:
-    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:203:13
-
-]]></system-err>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>

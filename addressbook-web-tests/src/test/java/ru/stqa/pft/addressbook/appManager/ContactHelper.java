@@ -69,6 +69,7 @@ public class ContactHelper extends BaseHelper {
     initCreationNewContact();
     fillNewContactForm(contact, true);
     submitContactCreation();
+    wd.findElement(By.cssSelector("div.msgbox"));
     contactCache = null;
   }
 
@@ -76,6 +77,7 @@ public class ContactHelper extends BaseHelper {
     initContactModificationById(contact.getId());
     fillNewContactForm(contact, false);
     submitContactModification();
+    wd.findElement(By.cssSelector("div.msgbox"));
     contactCache = null;
   }
 
@@ -83,6 +85,7 @@ public class ContactHelper extends BaseHelper {
     selectContactById(contact.getId());
     deleteSelectedContact();
     closeDialogWindow();
+    wd.findElement(By.cssSelector("div.msgbox"));
     contactCache = null;
   }
 
