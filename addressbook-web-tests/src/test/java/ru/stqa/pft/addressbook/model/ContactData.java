@@ -197,17 +197,24 @@ public class ContactData {
     return allPhones;
   }
 
-  public File getPhoto() {
-    return new File(photo);
-  }
-
   @Override
   public String toString() {
     return "ContactData{" +
             "id=" + id +
             ", firstname='" + firstname + '\'' +
             ", lastname='" + lastname + '\'' +
+            ", address='" + address + '\'' +
+            ", firstEmail='" + firstEmail + '\'' +
+            ", secondEmail='" + secondEmail + '\'' +
+            ", thirdEmail='" + thirdEmail + '\'' +
+            ", mobilePhone='" + mobilePhone + '\'' +
+            ", homePhone='" + homePhone + '\'' +
+            ", workPhone='" + workPhone + '\'' +
             '}';
+  }
+
+  public File getPhoto() {
+    return new File(photo);
   }
 
   @Override

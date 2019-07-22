@@ -33,7 +33,11 @@ public class ContactModificationTests extends TestBase {
     File photo = new File("src/test/resources/Myron.jpg");
     ContactData contact = new ContactData().withId(modifiedContact.getId()).withFirstname("Миса").
             withLastname("Ушастая").withAddress("СПб, " + "Мискин дом, кв. 155").
-            withMobilePhone("+79119654765").withFirstEmail("Myssandeya@gmail.com").withGroup(null);
+            withMobilePhone("+79119654765").withFirstEmail("Myssandeya@gmail.com").withGroup(null)
+            .withHomePhone("+79117654575")
+            .withWorkPhone("68989")
+            .withSecondEmail("My_ron@yandex.ru")
+            .withThirdEmail("Sam.Myron@mail.ru");
     app.contact().modify(contact.withPhoto(photo));
     assertThat(app.contact().count(), equalTo(before.size()));
     Contacts after = app.db().contacts();
