@@ -72,15 +72,6 @@ public class ContactData {
   @Transient
   private String allEmails;
 
-  @Override
-  public String toString() {
-    return "ContactData{" +
-            "id=" + id +
-            ", firstname='" + firstname + '\'' +
-            ", lastname='" + lastname + '\'' +
-            '}';
-  }
-
   @Column(name = "photo")
   @Type(type = "text")
   private String photo;
@@ -211,19 +202,34 @@ public class ContactData {
   }
 
   @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            '}';
+  }
+
+  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     ContactData that = (ContactData) o;
     return id == that.id &&
             Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname);
+            Objects.equals(lastname, that.lastname) &&
+            Objects.equals(address, that.address) &&
+            Objects.equals(firstEmail, that.firstEmail) &&
+            Objects.equals(secondEmail, that.secondEmail) &&
+            Objects.equals(thirdEmail, that.thirdEmail) &&
+            Objects.equals(mobilePhone, that.mobilePhone) &&
+            Objects.equals(homePhone, that.homePhone) &&
+            Objects.equals(workPhone, that.workPhone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstname, lastname);
+    return Objects.hash(id, firstname, lastname, address, firstEmail, secondEmail,
+            thirdEmail, mobilePhone, homePhone, workPhone);
   }
-
-
 }
