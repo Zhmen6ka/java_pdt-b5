@@ -31,16 +31,21 @@ public class ContactModificationTests extends TestBase {
     Contacts before = app.db().contacts();
     ContactData modifiedContact = before.iterator().next();
     File photo = new File("src/test/resources/Myron.jpg");
-    ContactData contact = new ContactData().withId(modifiedContact.getId()).withFirstname("Миса").
-            withLastname("Ушастая").withAddress("СПб, " + "Мискин дом, кв. 155").
-            withMobilePhone("+79119654765").withFirstEmail("Myssandeya@gmail.com").withGroup(null)
+    ContactData contact = new ContactData().withId(modifiedContact.getId())
+            .withFirstname("Миса")
+            .withLastname("Ушастая")
+            .withAddress("СПб, " + "Мискин дом, кв. 155")
+            .withFirstEmail("Myssandeya@gmail.com")
+            .withSecondEmail("My_ron@yandex.ru")
+            .withThirdEmail("Sam.Myron@mail.ru")
+            .withMobilePhone("+79119654765")
             .withHomePhone("+79117654575")
             .withWorkPhone("68989")
-            .withSecondEmail("My_ron@yandex.ru")
-            .withThirdEmail("Sam.Myron@mail.ru");
+            .withGroup(null);
     app.contact().modify(contact.withPhoto(photo));
     assertThat(app.contact().count(), equalTo(before.size()));
     Contacts after = app.db().contacts();
     assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
+    verifyContactListInUI();
   }
 }

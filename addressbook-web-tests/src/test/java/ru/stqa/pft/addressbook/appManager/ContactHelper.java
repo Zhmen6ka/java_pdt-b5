@@ -7,8 +7,11 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.tests.ContactEmailTests;
+import ru.stqa.pft.addressbook.tests.ContactPhoneTests;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ContactHelper extends BaseHelper {
 
@@ -122,6 +125,19 @@ public class ContactHelper extends BaseHelper {
               .withAllPhones(allPhones));
     }
     return new Contacts(contactCache);
+  }
+
+  public String mergePhones(ContactData contact) {
+    return Arrays.asList(contact
+            .getHomePhone(), contact.getMobilePhone(), contact.getWorkPhone())
+            .stream().filter((s) -> ! s.equals("")).map(ContactPhoneTests::cleaned)
+            .collect(Collectors.joining("\n"));
+  }
+
+  public String mergeEmails(ContactData contact) {
+    return Arrays.asList(contact.getFirstEmail(), contact.getSecondEmail(), contact.getThirdEmail())
+            .stream().filter((s) -> ! s.equals("")).map(ContactEmailTests::cleaned)
+            .collect(Collectors.joining("\n"));
   }
 
   public ContactData contactInfoFromEditForm(ContactData contact) {
